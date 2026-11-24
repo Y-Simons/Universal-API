@@ -1,33 +1,28 @@
-# Anesth AI
-AI-assisted workflow for French anesthetists: risk stratification, pre/post-op automation, and teleconsultation.
+# Universal API — the screen as a universal interface
 
-## Run (Docker recommended)
-```bash
-docker compose build
-docker compose up
-```
-- Frontend: http://localhost:3000
-- Backend: http://localhost:8000
+**Status: research note, ongoing. No implementation in this repository.**
 
-Seeded credentials:
-- anesth@example.com / changeme
+## Idea
 
-## Run locally (no Docker)
-Backend:
-```bash
-cd backend
-pip install --break-system-packages -r requirements.txt
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-```
-Frontend:
-```bash
-cd frontend
-npm install
-npm run dev
-```
+Most business software exposes its data through heterogeneous, often closed or
+undocumented interfaces. The one interface every application shares is the
+screen: whatever a human can read, a system can in principle read too.
 
-## Compliance and privacy
-- GDPR: explicit consent tracking, audit logging, data minimization
-- Hosting: EU/HDS-compliant provider for PHI in production
-- Security: JWT auth, CORS config, TLS, secret rotation
-- Clinical: decision-support only; clinician review required
+This project explores **screen recording (pixels) as a universal, standardised
+input for data capture and processing**, as an alternative to building and
+maintaining one connector per application.
+
+## Questions studied
+
+- **Feasibility** — which kinds of screens and data (tables, forms, dashboards,
+  documents) can be captured reliably from pixels alone?
+- **Benefit / cost** — when does a screen-based pipeline beat a classic API or
+  connector integration (build time, maintenance, robustness to UI changes,
+  latency, compute cost)?
+- **Limits** — accuracy, auditability, security and privacy of capturing what is
+  displayed on screen.
+
+## Status
+
+Exploratory work. Notes and prototypes will be added here as the analysis
+progresses.
